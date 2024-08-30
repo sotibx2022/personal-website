@@ -1,11 +1,13 @@
 import React from 'react'
 import ImageSlider from '../imageSlider/ImageSlider'
 import CauraselSlider from '../cauroselSlider/CauraselSlider'
+import BasicSlider from '../basicSlider/BasicSlider'
 const HeroSection = () => {
   return (
-    <div className='flex justify-center items-center w-[100vw] h-[100vh]'>
+    <div className='flex justify-center items-center'>
         {/* <ImageSlider/> */}
-        <CauraselSlider/>
+        {/* <CauraselSlider/> */}
+        <BasicSlider/>
     </div>
   )
 }
