@@ -11,12 +11,15 @@ const Header: React.FC<HeaderProps> = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   return (
-    <header className="header">
+    <header>
       <Link href="/">
         <img src="../logo.png" alt="Binayaraj soti logo" className="logo" />
       </Link>
       <nav className={`navbar ${isMobileMenuOpen ? 'active' : ''}`}>
         <ul className="navbar-lists">
+          <span className='bg-helper p-4'>Green</span>
+          <span className='bg-[var(--helper)] p-4'>Green</span>
+          <span className="bg-primaryDark p-4">Primary Dark</span>
           <li><Link className="navbar-link home-link" href="/">Home</Link></li>
           <li><a className="navbar-link about-link" href="#about-section">About</a></li>
           <li><a className="navbar-link service-link" href="#service-section">Services</a></li>

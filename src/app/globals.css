@@ -1,43 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@theme {
+  --primaryDark: #7e7e7e;
+  --helper: #e78200;
+  --background: white;
+  --gradient: linear-gradient(to right top, #e78200, #ed6c5e, #cb718d, #9a7c97, #7e7e7e);
+  --shadpw: 0px 0px 20px 0px rgb(132 144 255 / 20%);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-:root {
-  --heading: #e78200;
-  --para: #7e7e7e;
-  --helper: #e78200;
-  --bg: white;
-  --gradient: linear-gradient(to right top, #e78200, #ed6c5e, #cb718d, #9a7c97, #7e7e7e);
-  --shadpw: 0px 0px 20px 0px rgb(132 144 255 / 20%);
-  --white:white;
-}
-/* spacing 
-desktop = 4.8rem */
+
 html {
   font-size: 62.5%;
   font-family: "Work Sans", sans-serif;
 }
-body {
-}
+
 h1,
 h2,
 h3,
 h4 {
   font-family: "Rufina", serif;
   font-family: "Poppins", sans-serif;
-  color:var(--heading);
+  color:var(--helper);
 }
 h1 {
-  color: var(--heading);
+  color: var(--helper);
   font-size: 5rem;
   font-weight: 600;
 }
 p {
-  color: var(--para);
+  color: var(--primaryDark);
   line-height: 1.6;
   font-size: 1.8rem;
   /* word-spacing: 0.1rem; */
@@ -74,7 +68,6 @@ li {
 }
 .container {
   max-width: 90vw;
-  /* background: red; */
   margin:0 auto;
 }
 .grid {
@@ -99,7 +92,7 @@ Header Section Start
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--bg);
+  background: var(--background);
   /* background-color: #e7f5ff; */
 }
 .header .logo {
@@ -164,7 +157,7 @@ and we need to hide the close menu icon
 Hero  Section Start
 ======================================= */
 .section-hero {
-  background: var(--bg);
+  background: var(--background);
 }
 .section-hero-data {
   display: flex;
@@ -174,7 +167,7 @@ Hero  Section Start
 }
 .hero-top-data {
   text-transform: uppercase;
-  color: var(--heading);
+  color: var(--helper);
   font-weight: 500;
   font-size: 1.5rem;
   color: var(--helper);
@@ -184,7 +177,7 @@ Hero  Section Start
   font-weight: 700;
   font-size: 6.4rem;
 }
-.hero-para {
+.hero-primaryDark {
   margin-top: 1.5rem;
   margin-bottom: 5rem;
   max-width: 60rem;
@@ -251,7 +244,7 @@ h3 {
 .bio-progress-bar {
   width: 90%;
   height: 0.8rem;
-  /* background: var(--para); */
+  /* background: var(--primaryDark); */
   background-color: rgb(233 236 239);
   border-radius: 10rem;
   position: relative;
@@ -323,7 +316,7 @@ h3 {
  Section portfolio
 ======================================= */
 .section-portfolio {
-  background-color: var(--bg);
+  background-color: var(--background);
 }
 .p-btns{
   display: flex;
@@ -401,10 +394,10 @@ work data Section
 }
 .section-work-data h2{
 font-size: 4.8rem;
-color:var(--white);
+color:var(--background);
 }
 .section-work-data p {
-  color: var(--white);
+  color: var(--background);
   font-size: 2rem;
 }
 /* ===========================================
@@ -436,7 +429,7 @@ Services Section
   border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
   padding: 1.4rem 1.8rem;
   position: relative;
-  color: var(--heading);
+  color: var(--helper);
   animation: water-wave 3s linear infinite;
 }
 .serive-icon::after {
@@ -472,7 +465,7 @@ Services Section
 Resume Section
 ======================================= */
 .section-resume {
-  background: var(--bg);
+  background: var(--background);
 }
 .resume-img {
   display: flex;
@@ -484,11 +477,11 @@ Resume Section
   box-shadow: -2rem 2rem 0 0 var(--helper);
   /* box-shadow: var(--shadpw) */
 }
-.resume-para {
+.resume-primaryDark {
   font-size: 2.4rem;
   letter-spacing: 0;
   text-transform: capitalize;
-  color: var(--heading);
+  color: var(--helper);
 }
 .resume-data-subsection {
   display: flex;
@@ -497,7 +490,7 @@ Resume Section
   gap: 4.8rem;
   margin-top: 4.4rem;
   padding-bottom: 2.4rem;
-  border-bottom: 1px solid var(--para-tint);
+  border-bottom: 1px solid var(--primaryDark-tint);
 }
 .resume-data-left .grid {
   gap: 1.5rem;
@@ -610,14 +603,14 @@ textarea {
 Footer Section
 ======================================= */
 .section-footer {
-  background: var(--heading);
+  background: var(--helper);
 }
 .section-footer h3 {
-  color: var(--white);
+  color: var(--background);
   margin-bottom: 4rem;
 }
 .f-about p {
-  color: var(--white);
+  color: var(--background);
 }
 .f-links ul,
 .f-services ul,
@@ -648,7 +641,7 @@ Footer Section
 .f-social-icons {
   margin: 5rem 0;
   text-align: center;
-  color: var(--white)
+  color: var(--background)
 }
 .f-social-icons .icons {
   width: 4rem;
@@ -657,13 +650,13 @@ Footer Section
   display: inline-block;
   padding: 1.4rem 1.8rem;
   position: relative;
-  color: var(--white);
+  color: var(--background);
   animation: water-wave 3s linear infinite;
-  color: var(--white);
+  color: var(--background);
 }
 .f-credits p {
   text-align: center;
-  color: var(--white)
+  color: var(--background)
 }
 footer a:hover {
   color: var(--third);
