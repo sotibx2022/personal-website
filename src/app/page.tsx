@@ -6,17 +6,19 @@ import ServicesSection from "./componnets/ServicesSection";
 import WorkCounterSection from "./componnets/WorkCounterSection";
 import AboutDeveloper from "./componnets/AboutDeveloper";
 import DeveloperServices from "./componnets/DeveloperServices";
+import NameAnimation from "./componnets/NameAnimation";
 export default function Home() {
   return (
     <>
+    {/* <NameAnimation/> */}
       <HeroSection />
-      <AboutDeveloper />
+      {/* <AboutDeveloper />
       <ServicesSection />
       <DeveloperServices />
       <PortfolioSection />
       <FreelanceSection />
       <WorkCounterSection />
-      <ContactSection />
+      <ContactSection /> */}
     </>
   );
 }
