@@ -5,6 +5,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import Image from 'next/image';
 const PortfolioSection: React.FC = () => {
   const slides = [
     {
@@ -106,11 +107,13 @@ const PortfolioSection: React.FC = () => {
                   <div
                     className="imageContainer w-full flex justify-center items-center"
                   >
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="slide-image"
-                    />
+                   <Image
+  src={slide.image}
+  alt={slide.title}
+  width={500}   // replace with actual width
+  height={250}  // replace with actual height
+  className="slide-image object-contain"
+/>
                   </div>
                   <div className="slide-content p-5 flex flex-col flex-grow justify-between">
                     <h3 className="slide-title text-xl font-semibold text-[var(--color-text)] mb-3">{slide.title}</h3>
