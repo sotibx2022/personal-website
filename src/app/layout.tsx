@@ -1,6 +1,4 @@
 import "./globals.css";
-import Header from "./componnets/Header";
-import Footer from "./componnets/Footer";
 export const metadata = {
   title: "Binayaraj Soti - Next.js E-commerce Developer from Nepal",
   description: "I'm Binayaraj Soti, a Next.js e-commerce developer who transforms your ideas into fast, modern, and user-friendly websites from Nepal.",
