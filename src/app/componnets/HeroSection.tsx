@@ -12,13 +12,8 @@ const HeroSection: React.FC = () => {
             MYSELF, BINAYARAJ
           </h1>
           <p className="hero-para text-lg text-gray-700 leading-relaxed">
-            Highly trained and motivated professional with over 6 years of Maintenance Planning experience at Saudi Aramco Oil Company, complemented by more than 10 years in IT across various institutions and consultancies.
+            I’m Binayaraj Soti, a Next.js e-commerce developer who transforms your ideas into fast, modern, and user-friendly websites.
           </p>
-          <div>
-            <a href="#" target="_blank" className="btn hireme-btn">
-              Hire Me
-            </a>
-          </div>
         </div>
       </div>
     </section>
