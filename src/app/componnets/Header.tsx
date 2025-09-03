@@ -2,10 +2,7 @@
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react';
-interface HeaderProps {
-  // You can add props here if needed
-}
-const Header: React.FC<HeaderProps> = () => {
+const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -14,10 +11,18 @@ const Header: React.FC<HeaderProps> = () => {
     <header className="header">
       <nav className={`navbar ${isMobileMenuOpen ? 'navbar-active' : ''}`}>
         <ul className="navbar-list">
-          <li><Link className="navbar-link home-link" href="/">Home</Link></li>
-          <li><a className="navbar-link service-link" href="#service-section">Skills</a></li>
-          <li><a className="navbar-link portfolio-link" href="#portfolio-section">Project</a></li>
-          <li><a className="navbar-link contact-link" href="#section-contact">Contact</a></li>
+          <li>
+            <Link className="navbar-link home-link" href="/">Home</Link>
+          </li>
+          <li>
+            <Link className="navbar-link service-link" href="#service-section">Skills</Link>
+          </li>
+          <li>
+            <Link className="navbar-link portfolio-link" href="#portfolio-section">Project</Link>
+          </li>
+          <li>
+            <Link className="navbar-link contact-link" href="#section-contact">Contact</Link>
+          </li>
         </ul>
       </nav>
       <div className="mobile-navbar-btn" onClick={toggleMobileMenu}>

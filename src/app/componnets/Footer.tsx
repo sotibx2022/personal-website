@@ -1,19 +1,22 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { ArrowUp } from 'lucide-react';
 const Footer: React.FC = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
   return (
     <footer className="footer-section">
       <div className="footer-container">
         <div className="footer-socials">
-          <a href="#" className="footer-social-link"><FaFacebookF /></a>
-          <a href="#" className="footer-social-link"><FaTwitter /></a>
-          <a href="#" className="footer-social-link"><FaLinkedinIn /></a>
-          <a href="#" className="footer-social-link"><FaInstagram /></a>
+          <Link href="#" className="footer-social-link"><FaFacebookF /></Link>
+          <Link href="#" className="footer-social-link"><FaTwitter /></Link>
+          <Link href="#" className="footer-social-link"><FaLinkedinIn /></Link>
+          <Link href="#" className="footer-social-link"><FaInstagram /></Link>
         </div>
         <p className="footer-copyright">
           © 2022 All rights reserved
