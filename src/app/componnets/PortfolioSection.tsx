@@ -1,96 +1,131 @@
 'use client';
-// components/PortfolioSection.tsx
-import React, { useState } from 'react';
-interface PortfolioItem {
-  id: number;
-  image: string;
-  title: string;
-  category: string[];
-  demoLink: string;
-  viewLink: string;
-}
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 const PortfolioSection: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<string>('all');
-  const portfolioItems: PortfolioItem[] = [
+  const slides = [
     {
       id: 1,
-      image: 'https://picsum.photos/id/230/800/600',
-      title: 'Project 1',
-      category: ['website'],
-      demoLink: '#',
-      viewLink: 'http://charcounter.thapaonlineclass.com/'
+      image: '../projectimage1.png',
+      title: 'Graphical Interactive Dashboard',
+      description:
+        'Using Recharts.js the orders, products, and user details are demonstrated in graphical format.'
     },
     {
       id: 2,
-      image: 'https://picsum.photos/id/260/800/600',
-      title: 'Project 2',
-      category: ['design'],
-      demoLink: '#',
-      viewLink: 'https://www.thapatechnical.com/'
+      image: '../projectimage2.png',
+      title: 'Light and Dark Mode Dashboard',
+      description:
+        'Responsive tables and sidebar supporting dual light and dark color modes.'
     },
     {
       id: 3,
-      image: 'https://picsum.photos/id/237/800/600',
-      title: 'Project 3',
-      category: ['mobile'],
-      demoLink: '#',
-      viewLink: 'https://example.com/project3'
+      image: '../projectimage3.jpeg',
+      title: 'AI Product Recommendation',
+      description:
+        'Langchain is used to recommend products based on user instructions.'
     },
     {
       id: 4,
-      image: 'https://picsum.photos/id/238/800/600',
-      title: 'Project 4',
-      category: ['website', 'design'],
-      demoLink: '#',
-      viewLink: 'https://example.com/project4'
+      image: '../projectimage4.png',
+      title: 'AI Product Details Generator',
+      description:
+        'Enter a product title and AI generates detailed product info and features using Langchain.'
+    },
+    {
+      id: 5,
+      image: '../projectimage5.png',
+      title: 'Sentiment Analysis of Remarks',
+      description:
+        'Groq AI and Langchain analyze remarks. Negative ones are blocked, positive ones go live, and neutral ones require admin approval.'
+    },
+    {
+      id: 6,
+      image: '../projectimage6.jpeg',
+      title: 'Wishlist Sharing',
+      description:
+        'Share wishlist items with loved ones so they can purchase what you truly want.'
     }
   ];
-  const filters = ['Websites', 'Youtube', 'Design'];
-  const filteredItems = activeFilter === 'all' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => 
-        item.category.includes(activeFilter.toLowerCase()));
   return (
-    <section className="section-portfolio section" id="portfolio-section">
-      <div className="container">
-        <h2 className="common-heading">Latest works</h2>
-        <p>
-          I have worked several years as an employee to reputed companies as a IT professional as well as completed
-          many mini projects using my core skills. Below are the some developements started for my self portfolio.
-        </p>
-      </div>
-      <div className="p-btns">
-        <button 
-          className={`btn p-btn ${activeFilter === 'all' ? 'active' : ''}`} 
-          onClick={() => setActiveFilter('all')}
-        >
-          All
-        </button>
-        {filters.map((filter, index) => (
-          <button
-            key={index}
-            className={`btn p-btn ${activeFilter === filter.toLowerCase() ? 'active' : ''}`}
-            onClick={() => setActiveFilter(filter.toLowerCase())}
+    <section className="section portfolio-section" id="portfolio">
+      {/* Custom styles for Swiper components using Tailwind */}
+      <style jsx>{`
+        .swiper-button-next,
+        .swiper-button-prev {
+          color: var(--color-primary) !important;
+        }
+        .swiper-pagination-bullet {
+          background: var(--color-text) !important;
+          opacity: 0.4;
+        }
+        .swiper-pagination-bullet-active {
+          background: var(--color-primary) !important;
+          opacity: 1;
+        }
+      `}</style>
+      <div className="portfolio-container">
+        {/* Left Side - Product Details */}
+        <div className="portfolio-details">
+          <h2 className="portfolio-title">Product Details</h2>
+          <h3 className="portfolio-subtitle">KTMnow.store</h3>
+          <p className="portfolio-description">
+            Fully functional <strong>AI Powered Ecommerce website</strong> built in Next.js.
+          </p>
+          <h4 className="portfolio-tech-title">Tech Stacks:</h4>
+          <ul className="portfolio-tech-list">
+            <li className="tech-item">TypeScript</li>
+            <li className="tech-item">Tailwind CSS</li>
+            <li className="tech-item">MongoDB</li>
+            <li className="tech-item">Langchain</li>
+            <li className="tech-item">Next.js</li>
+          </ul>
+        </div>
+        {/* Right Side - Swiper Slider */}
+        <div className="portfolio-slider relative">
+          <Swiper
+            spaceBetween={20}
+            pagination={{
+              clickable: true,
+              el: '.swiper-pagination',
+            }}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
+            modules={[Pagination, Navigation, Autoplay]}
+            loop={true}
+            className="h-full"
           >
-            {filter}
-          </button>
-        ))}
-      </div>
-      <div className="container grid grid-three-col portfolio-images">
-        {filteredItems.map(item => (
-          <div className={`img-ovelay p-btn--${item.id}`} key={item.id}>
-            <img src={item.image} loading="lazy" alt="portfolio images" />
-            <div className="overlay">
-              <a href={item.viewLink} target="_blank" rel="noopener noreferrer" className="common-heading">
-                {item.title}
-              </a>
-              <br />
-              <div className="btn">
-                <a href={item.demoLink} className="btn">View Demo</a>
-              </div>
-            </div>
-          </div>
-        ))}
+            {slides.map((slide) => (
+              <SwiperSlide key={slide.id}>
+                <div className="slide-card bg-gradient-to-br from-[var(--color-bg)] to-[#c1d0b5] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1 h-full flex flex-col">
+                  <div
+                    className="imageContainer w-full flex justify-center items-center"
+                  >
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="slide-image"
+                    />
+                  </div>
+                  <div className="slide-content p-5 flex flex-col flex-grow justify-between">
+                    <h3 className="slide-title text-xl font-semibold text-[var(--color-text)] mb-3">{slide.title}</h3>
+                    <p className="slide-description text-[var(--color-text)] opacity-90 leading-relaxed">{slide.description}</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* Navigation arrows with Tailwind styling */}
+          <div className="swiper-button-next !text-[var(--color-primary)] after:!text-xl md:after:!text-2xl"></div>
+          <div className="swiper-button-prev !text-[var(--color-primary)] after:!text-xl md:after:!text-2xl"></div>
+          {/* Pagination with Tailwind styling */}
+          <div className="swiper-pagination !bottom-2"></div>
+        </div>
       </div>
     </section>
   );

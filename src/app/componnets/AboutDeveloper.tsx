@@ -1,15 +1,6 @@
 // components/BioDataSection.tsx
 import React from "react";
-import {
-  Code2,
-  Braces,
-  Database,
-  Github,
-  Boxes,
-  Layers,
-  PlayCircle,
-  Server,
-} from "lucide-react";
+import { Code2, Braces, Github } from "lucide-react";
 import {
   SiHtml5,
   SiCss3,
@@ -28,31 +19,30 @@ interface Skill {
 }
 const AboutDeveloper: React.FC = () => {
   const skills: Skill[] = [
-    { name: "HTML", level: "Fluent", icon: <SiHtml5 className="text-orange-600 text-3xl" /> },
-    { name: "CSS", level: "Fluent", icon: <SiCss3 className="text-blue-600 text-3xl" /> },
-    { name: "JavaScript", level: "Fluent", icon: <SiJavascript className="text-yellow-500 text-3xl" /> },
-    { name: "TypeScript", level: "Fluent", icon: <SiTypescript className="text-blue-500 text-3xl" /> },
-    { name: "MongoDB", level: "Intermediate", icon: <SiMongodb className="text-green-600 text-3xl" /> },
-    { name: "Next.js", level: "Intermediate", icon: <SiNextdotjs className="text-black dark:text-white text-3xl" /> },
-    { name: "TailwindCSS", level: "Intermediate", icon: <SiTailwindcss className="text-cyan-500 text-3xl" /> },
-    { name: "Framer Motion", level: "Beginner", icon: <SiFramer className="text-pink-500 text-3xl" /> },
-    { name: "GitHub", level: "Intermediate", icon: <Github className="text-gray-700 dark:text-white w-7 h-7" /> },
-    { name: "Node.js", level: "Beginner", icon: <SiNodedotjs className="text-green-500 text-3xl" /> },
+    { name: "HTML", level: "Fluent", icon: <SiHtml5 className="skill-icon html-icon" /> },
+    { name: "CSS", level: "Fluent", icon: <SiCss3 className="skill-icon css-icon" /> },
+    { name: "JavaScript", level: "Fluent", icon: <SiJavascript className="skill-icon js-icon" /> },
+    { name: "TypeScript", level: "Fluent", icon: <SiTypescript className="skill-icon ts-icon" /> },
+    { name: "MongoDB", level: "Intermediate", icon: <SiMongodb className="skill-icon mongodb-icon" /> },
+    { name: "Next.js", level: "Intermediate", icon: <SiNextdotjs className="skill-icon nextjs-icon" /> },
+    { name: "TailwindCSS", level: "Intermediate", icon: <SiTailwindcss className="skill-icon tailwind-icon" /> },
+    { name: "Framer Motion", level: "Beginner", icon: <SiFramer className="skill-icon framer-icon" /> },
+    { name: "GitHub", level: "Intermediate", icon: <Github className="skill-icon github-icon" /> },
+    { name: "Node.js", level: "Beginner", icon: <SiNodedotjs className="skill-icon nodejs-icon" /> },
+    { name: "Langchain", level: "Intermediate", icon: <Code2 className="skill-icon langchain-icon" /> },
+    { name: "Shadcn UI", level: "Beginner", icon: <Braces className="skill-icon shadcn-icon" /> },
   ];
   return (
-    <section className="section section-biodata">
+    <section className="section biodata-section">
       <div className="container">
-        <h2 className="common-heading text-center">My Skills</h2>
-        <div className="grid grid-three-col gap-6">
+        <h2 className="common-heading heading-center">My Skills</h2>
+        <div className="skills-grid">
           {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-4 p-4 border rounded-lg shadow-sm hover:shadow-md transition"
-            >
-              <div>{skill.icon}</div>
-              <div>
-                <h3 className="font-semibold">{skill.name}</h3>
-                <p className="text-sm">{skill.level}</p>
+            <div key={index} className="skill-card">
+              <div className="skill-icon-wrapper">{skill.icon}</div>
+              <div className="skill-info">
+                <h3 className="skill-name">{skill.name}</h3>
+                <p className="skill-level">{skill.level}</p>
               </div>
             </div>
           ))}
