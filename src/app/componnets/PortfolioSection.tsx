@@ -10,42 +10,42 @@ const PortfolioSection: React.FC = () => {
   const slides = [
     {
       id: 1,
-      image: '../projectimage1.png',
+      image: '/projectimage1.png',
       title: 'Graphical Interactive Dashboard',
       description:
         'Using Recharts.js the orders, products, and user details are demonstrated in graphical format.'
     },
     {
       id: 2,
-      image: '../projectimage2.png',
+      image: '/projectimage2.png',
       title: 'Light and Dark Mode Dashboard',
       description:
         'Responsive tables and sidebar supporting dual light and dark color modes.'
     },
     {
       id: 3,
-      image: '../projectimage3.jpeg',
+      image: '/projectimage3.jpeg',
       title: 'AI Product Recommendation',
       description:
         'Langchain is used to recommend products based on user instructions.'
     },
     {
       id: 4,
-      image: '../projectimage4.png',
+      image: '/projectimage4.png',
       title: 'AI Product Details Generator',
       description:
         'Enter a product title and AI generates detailed product info and features using Langchain.'
     },
     {
       id: 5,
-      image: '../projectimage5.png',
+      image: '/projectimage5.png',
       title: 'Sentiment Analysis of Remarks',
       description:
         'Groq AI and Langchain analyze remarks. Negative ones are blocked, positive ones go live, and neutral ones require admin approval.'
     },
     {
       id: 6,
-      image: '../projectimage6.jpeg',
+      image: '/projectimage6.jpeg',
       title: 'Wishlist Sharing',
       description:
         'Share wishlist items with loved ones so they can purchase what you truly want.'
