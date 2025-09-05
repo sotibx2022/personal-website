@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 const PortfolioSection: React.FC = () => {
   const slides = [
     {
@@ -72,7 +73,10 @@ const PortfolioSection: React.FC = () => {
         {/* Left Side - Product Details */}
         <div className="portfolio-details">
           <h2 className="portfolio-title">Product Details</h2>
-          <h3 className="portfolio-subtitle">KTMnow.store</h3>
+         <div className="projectSubtitle">
+           <h3 className="portfolio-subtitle">KTMnow.store</h3>
+           <Link href='https://www.ktmnow.store/' className="btn" >View</Link>
+         </div>
           <p className="portfolio-description">
             Fully functional <strong>AI Powered Ecommerce website</strong> built in Next.js.
           </p>

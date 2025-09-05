@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 :root {
   --color-bg: #a1b896;
-  --color-text: #132a01;
+  --color-text: #445d39;
   --color-primary: #445d39;
   --color-primary-light: rgba(68, 93, 57, 0.7);
   --color-bg-light: rgba(161, 184, 150, 0.8);
@@ -28,130 +28,34 @@ body {
   position: relative;
   overflow: hidden;
 }
-/* ============================= */
-/* Header */
-/* ============================= */
-.header {
+.hero-section {
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.social-link {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 1.5rem 2rem;
-  position: sticky;
-  top: 0;
-  background: var(--color-bg-light);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-  border-bottom: 1px solid rgba(19, 42, 1, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
-.navbar {
-  display: none;
-  gap: 2rem;
-}
-.navbar-active {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--color-bg-light);
-  backdrop-filter: blur(10px);
-  padding: 2rem;
-  border-top: 1px solid rgba(19, 42, 1, 0.1);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-.navbar-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.navbar-link {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
   color: var(--color-text);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 2rem;
-  position: relative;
-  padding: 0.5rem 0;
+  background-color: var(--color-bg);
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
 }
-.navbar-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width 0.3s ease;
+.social-link:hover {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  transform: translateY(-3px);
 }
-.navbar-link:hover {
-  color: var(--color-primary);
-}
-.navbar-link:hover::after {
-  width: 100%;
-}
-.home-link,
-.about-link,
-.service-link,
-.portfolio-link,
-.contact-link {
-  color: var(--color-text);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 2rem;
-  position: relative;
-}
-.home-link::after,
-.about-link::after,
-.service-link::after,
-.portfolio-link::after,
-.contact-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-primary);
-  transition: width 0.3s ease;
-}
-.home-link:hover,
-.about-link:hover,
-.service-link:hover,
-.portfolio-link:hover,
-.contact-link:hover {
-  color: var(--color-primary);
-}
-.home-link:hover::after,
-.about-link:hover::after,
-.service-link:hover::after,
-.portfolio-link:hover::after,
-.contact-link:hover::after {
-  width: 100%;
-}
-.mobile-navbar-btn {
-  display: block;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
-  border-radius: 4px;
-}
-.mobile-navbar-btn:hover {
-  background: rgba(19, 42, 1, 0.1);
-}
-.mobile-nav-icon {
-  width: 2rem;
-  height: 2rem;
-  color: var(--color-text);
-  transition: all 0.3s ease;
-}
-.mobile-navbar-btn:hover .mobile-nav-icon {
-  transform: scale(1.1);
-}
-/* Add these styles to your global.css file */
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--color-primary) !important;
@@ -174,95 +78,10 @@ body {
   background: var(--color-primary) !important;
   opacity: 1;
 }
-/* ============================= */
-/* Hero Section */
-/* ============================= */
-.hero-section {
-  padding: 5rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, transparent 20%, var(--color-bg) 70%);
-  opacity: 0.3;
-  transform: rotate(30deg);
-}
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
+.projectSubtitle{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
-}
-@media (min-width: 768px) {
-  .hero-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-.hero-top-text {
-  color: var(--color-primary);
-  text-transform: uppercase;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  letter-spacing: 3px;
-  position: relative;
-  display: inline-block;
-}
-.hero-top-text::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background: var(--color-primary);
-}
-.hero-heading {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
-}
-.hero-heading::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100px;
-  height: 4px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-}
-.hero-description {
-  color: var(--color-text);
-  font-size: 1.8rem;
-  line-height: 1.6;
-}
-/* ============================= */
-/* BioData Section */
-/* ============================= */
-.biodata-section {
-  padding: 4rem 2rem;
-  position: relative;
-}
-.biodata-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
 }
 .skills-grid {
   display: grid;
@@ -713,25 +532,12 @@ body {
   overflow: hidden;
   z-index: 1;
   font-family: 'VT323', monospace;
-}
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--color-text);
-  transition: all 0.4s ease;
-  z-index: -1;
+  text-decoration: none;
 }
 .btn:hover {
   color: var(--color-bg);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.btn:hover::before {
-  width: 100%;
 }
 .submit-btn {
   align-self: flex-end;
@@ -743,62 +549,18 @@ body {
 .footer-section {
   background: var(--gradient-bg);
   color: var(--color-text);
-  padding: 3rem 2rem;
-  text-align: center;
+  padding: 0rem 2rem;
   font-family: 'VT323', monospace;
-  position: relative;
-  /* needed for absolute button positioning */
-}
-.footer-container {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  justify-content: space-between;
   align-items: center;
 }
-/* Social Media Icons */
-.footer-socials {
-  display: flex;
-  gap: 1rem;
-}
-.footer-social-link {
-  color: var(--color-text);
-  font-size: 1.5rem;
-  transition: color 0.3s;
-}
-.footer-social-link:hover {
-  color: var(--color-primary);
-}
-/* Scroll to Top Button */
-.footer-scroll-top {
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  padding: 0.5rem;
-  background-color: var(--color-primary);
-  color: var(--color-bg);
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: background-color 0.3s, color 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.footer-scroll-top:hover {
-  background-color: var(--color-text);
-  color: var(--color-bg);
-}
-/* Copyright Text */
 .footer-copyright {
   font-size: 1.5rem;
   color: var(--color-text);
 }
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
-  .hero-heading {
-    font-size: 3rem;
-  }
   .portfolio-title {
     font-size: 2rem;
   }
