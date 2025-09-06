@@ -18,7 +18,7 @@ const ContactSection: React.FC = () => {
     // You would typically send this data to your backend here
   };
   return (
-    <section className="section contact-section" id="section-contact">
+    <section className="section contact-section container" id="section-contact">
       <div className="container">
         <h2 className="common-heading heading-center">Contact Us</h2>
       </div>
