@@ -37,9 +37,6 @@ const skills: Skill[] = [
   { name: "Shadcn UI", icon: <Braces className="skill-icon shadcn-icon" /> },
 ];
 const HeroSection: React.FC = () => {
-  const handleAnimationComplete = () => {
-    console.log('All letters have animated!');
-  };
   return (
     <section className="section hero-section">
       <div className="container hero-container">
