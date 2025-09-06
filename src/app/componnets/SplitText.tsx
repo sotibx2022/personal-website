@@ -54,7 +54,7 @@ const SplitText: React.FC<SplitTextProps> = ({
             if (el._rbsplitInstance) {
                 try {
                     el._rbsplitInstance.revert();
-                } catch (_) { }
+                } catch { }
                 el._rbsplitInstance = undefined;
             }
             const startPct = (1 - threshold) * 100;

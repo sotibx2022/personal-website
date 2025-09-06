@@ -47,7 +47,6 @@ const HeroSection: React.FC = () => {
         <div className="hero-content">
           <SplitText
             text="Welcome, Binayaraj SOTI Here !"
-            className="text-2xl font-semibold text-center"
             delay={100}
             duration={0.6}
             ease="power3.out"
