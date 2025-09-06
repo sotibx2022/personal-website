@@ -63,9 +63,8 @@ const PortfolioSection: React.FC = () => {
   return (
     <section className="section portfolio-section" id="portfolio">
       <div className="portfolio-container">
-        {/* Left Side - Product Details */}
+        <h2 className="portfolio-title">Product Details</h2>
         <div className="portfolio-details">
-          <h2 className="portfolio-title">Product Details</h2>
           <div className="projectSubtitle">
             <Image
               alt="ktmnowlogo"
