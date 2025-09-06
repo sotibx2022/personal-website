@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { Home, Code2 } from 'lucide-react';
-import './Header.css';
 const Header = () => {
   const [activeLink, setActiveLink] = useState('/');
   return (
