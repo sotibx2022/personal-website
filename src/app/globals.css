@@ -10,16 +10,31 @@
   --color-bg-light: rgba(161, 184, 150, 0.8);
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-text) 100%);
   --gradient-bg: linear-gradient(135deg, var(--color-bg) 0%, #b5c7a8 100%);
+  /* Base font sizes with responsive units */
+  --font-xs: clamp(1.2rem, 3vw, 1.4rem);
+  --font-sm: clamp(1.4rem, 3.5vw, 1.6rem);
+  --font-md: clamp(1.6rem, 4vw, 1.8rem);
+  --font-lg: clamp(1.8rem, 4.5vw, 2rem);
+  --font-xl: clamp(2rem, 5vw, 2.2rem);
+  --font-2xl: clamp(2.2rem, 5.5vw, 2.5rem);
+  --font-3xl: clamp(2.5rem, 6vw, 3rem);
+  --font-4xl: clamp(3rem, 7vw, 3.5rem);
 }
-:root {
-  --color-bg: #a1b896;
-  --color-text: #445d39;
-  --color-primary: #445d39;
-  --color-primary-light: rgba(68, 93, 57, 0.7);
-  --color-bg-light: rgba(161, 184, 150, 0.8);
-  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-text) 100%);
-  --gradient-bg: linear-gradient(135deg, var(--color-bg) 0%, #b5c7a8 100%);
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'VT323', monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-lg);
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
 }
+/* ============================= */
+/* Header & Navigation */
+/* ============================= */
 .header {
   display: inline-flex;
   justify-content: flex-end;
@@ -50,7 +65,7 @@
   text-decoration: none;
   color: var(--color-text);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: var(--font-md);
   padding: 0.5rem 1rem;
   position: relative;
   transition: all 0.3s ease;
@@ -83,18 +98,9 @@
   color: var(--color-primary);
   background-color: rgba(68, 93, 57, 0.1);
 }
-body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: 'VT323', monospace;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 2rem;
-  overflow-x: hidden;
-  min-height: 100vh;
-  position: relative;
-}
+/* ============================= */
+/* Sections */
+/* ============================= */
 .section {
   padding: 1rem 2rem;
   position: relative;
@@ -117,7 +123,7 @@ body {
   align-items: center;
   width: 40px;
   height: 40px;
-  font-size: 1.2rem;
+  font-size: var(--font-lg);
   color: var(--color-text);
   background-color: var(--color-bg);
   border-radius: 50%;
@@ -128,39 +134,9 @@ body {
   color: var(--color-bg);
   transform: translateY(-3px);
 }
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--color-primary) !important;
-}
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 1.25rem;
-}
-@media (min-width: 768px) {
-  .swiper-button-next:after,
-  .swiper-button-prev:after {
-    font-size: 1.5rem;
-  }
-}
-.swiper-pagination-bullet {
-  background: var(--color-text) !important;
-  opacity: 0.4;
-}
-.swiper-pagination-bullet-active {
-  background: var(--color-primary) !important;
-  opacity: 1;
-}
-.projectSubtitle{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@media (max-width:500px){
-.projectSubtitle{
-  flex-direction: column;
-  align-items: start;
-}
-}
+/* ============================= */
+/* Skills Section */
+/* ============================= */
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -241,11 +217,11 @@ body {
 .skill-name {
   font-weight: bold;
   color: var(--color-text);
-  font-size: 2rem;
+  font-size: var(--font-xl);
   transition: all 0.4s ease;
 }
 .skill-level {
-  font-size: 2rem;
+  font-size: var(--font-lg);
   color: var(--color-primary);
   transition: all 0.4s ease;
 }
@@ -301,7 +277,7 @@ body {
 }
 .common-heading,
 .portfolio-title {
-  font-size: 3rem;
+  font-size: var(--font-4xl);
   font-weight: bold;
   margin-bottom: 1rem;
   background: var(--gradient-primary);
@@ -323,7 +299,7 @@ body {
   border-radius: 2px;
 }
 .portfolio-subtitle {
-  font-size: 2rem;
+  font-size: var(--font-2xl);
   margin-bottom: 1rem;
   position: relative;
   padding-left: 1.5rem;
@@ -340,14 +316,14 @@ body {
   border-radius: 50%;
 }
 .portfolio-description {
-  font-size: 1.8rem;
+  font-size: var(--font-lg);
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 .portfolio-tech-title {
   font-weight: 600;
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  font-size: var(--font-xl);
   display: inline-block;
   padding: 0.25rem 0.75rem;
   background: rgba(68, 93, 57, 0.1);
@@ -363,7 +339,7 @@ body {
 }
 .tech-item {
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  font-size: var(--font-md);
   padding: 0.25rem 0.75rem;
   background: var(--color-bg-light);
   backdrop-filter: blur(10px);
@@ -417,7 +393,7 @@ body {
 }
 .slide-title {
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: var(--font-xl);
   margin-bottom: 0.5rem;
   position: relative;
   display: inline-block;
@@ -436,8 +412,42 @@ body {
   width: 100%;
 }
 .slide-description {
-  font-size: 2rem;
+  font-size: var(--font-lg);
   line-height: 1.5;
+}
+.projectSubtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 500px) {
+  .projectSubtitle {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+/* Swiper styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-primary) !important;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: var(--font-lg);
+}
+@media (min-width: 768px) {
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: var(--font-xl);
+  }
+}
+.swiper-pagination-bullet {
+  background: var(--color-text) !important;
+  opacity: 0.4;
+}
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+  opacity: 1;
 }
 /* ============================= */
 /* Contact Section */
@@ -469,7 +479,7 @@ body {
 }
 @media (max-width: 992px) {
   .contact-content {
-   flex-direction: column;
+    flex-direction: column;
     gap: 5rem;
   }
 }
@@ -484,7 +494,7 @@ body {
   max-width: 500px;
 }
 .contact-info-title {
-  font-size: 1.75rem;
+  font-size: var(--font-2xl);
   margin-bottom: 1rem;
   color: var(--color-primary);
   position: relative;
@@ -501,7 +511,7 @@ body {
   border-radius: 2px;
 }
 .contact-info-description {
-  font-size: 2rem;
+  font-size: var(--font-lg);
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -527,12 +537,12 @@ body {
   flex-shrink: 0;
 }
 .contact-text h4 {
-  font-size: 2rem;
+  font-size: var(--font-lg);
   margin-bottom: 0.25rem;
   color: var(--color-primary);
 }
 .contact-text p {
-  font-size: 2rem;
+  font-size: var(--font-md);
   margin: 0;
 }
 .contact-form {
@@ -541,7 +551,7 @@ body {
   gap: 1.5rem;
   background: var(--color-bg-light);
   backdrop-filter: blur(10px);
-  padding: 5rem;
+  padding: 1rem;
   border-radius: 1rem;
   border: 1px solid rgba(19, 42, 1, 0.1);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -564,19 +574,18 @@ body {
   color: var(--color-primary);
 }
 .label-text {
-  font-size: 2rem;
+  font-size: var(--font-md);
   font-weight: 600;
   color: var(--color-primary);
 }
 .form-input,
 .form-textarea {
-  width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
   background-color: var(--color-bg);
   border: 1px solid rgba(19, 42, 1, 0.2);
   color: var(--color-text);
-  font-size: 2rem;
+  font-size: var(--font-md);
   transition: all 0.3s ease;
 }
 .form-textarea {
@@ -603,7 +612,7 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--font-md);
   border: none;
   transition: all 0.4s ease;
   position: relative;
@@ -634,19 +643,53 @@ body {
   align-items: center;
 }
 .footer-copyright {
-  font-size: 1.5rem;
+  font-size: var(--font-sm);
   color: var(--color-text);
 }
-/* Media queries for responsiveness */
+/* ============================= */
+/* Responsive Adjustments */
+/* ============================= */
 @media (max-width: 768px) {
   .portfolio-title {
-    font-size: 2rem;
+    font-size: var(--font-3xl);
   }
   .portfolio-subtitle {
-    font-size: 1.75rem;
+    font-size: var(--font-xl);
   }
   .skill-card {
     flex-direction: column;
     text-align: center;
+  }
+  /* Further reduce font sizes on very small screens */
+  body {
+    font-size: var(--font-md);
+  }
+  .skill-name {
+    font-size: var(--font-lg);
+  }
+  .skill-level {
+    font-size: var(--font-md);
+  }
+}
+@media (max-width: 480px) {
+  /* Even smaller adjustments for mobile devices */
+  .section {
+    padding: 1rem;
+  }
+  .portfolio-section,
+  .contact-section {
+    padding: 3rem 1rem;
+  }
+  .portfolio-title {
+    font-size: var(--font-2xl);
+  }
+  .portfolio-subtitle {
+    font-size: var(--font-lg);
+  }
+  .slide-title {
+    font-size: var(--font-lg);
+  }
+  .slide-description {
+    font-size: var(--font-md);
   }
 }
