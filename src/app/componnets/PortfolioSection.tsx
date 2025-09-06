@@ -62,8 +62,8 @@ const PortfolioSection: React.FC = () => {
   ];
   return (
     <section className="section portfolio-section" id="portfolio">
+      <h2 className="portfolio-title">Product Details</h2>
       <div className="portfolio-container">
-        <h2 className="portfolio-title">Product Details</h2>
         <div className="portfolio-details">
           <div className="projectSubtitle">
             <Image
