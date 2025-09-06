@@ -1,3 +1,5 @@
+import Footer from "./componnets/Footer";
+import Header from "./componnets/Header";
 import "./globals.css";
 export const metadata = {
   title: "Binayaraj Soti - Next.js E-commerce Developer from Nepal",
@@ -22,7 +24,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="container">
+        <Header/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
