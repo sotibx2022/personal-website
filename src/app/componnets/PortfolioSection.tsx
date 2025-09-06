@@ -8,13 +8,13 @@ import 'swiper/css/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 // Import images from public/project1 folder
-import projectimage1 from '@/public/project1/projectimage1.png';
-import projectimage2 from '@/public/project1/projectimage2.png';
-import projectimage3 from '@/public/project1/projectimage3.jpeg';
-import projectimage4 from '@/public/project1/projectimage4.png';
-import projectimage5 from '@/public/project1/projectimage5.png';
-import projectimage6 from '@/public/project1/projectimage6.jpeg';
-import ktmnowlogo from '@/public/ktmnowlogo.png';
+import projectimage1 from '../../../public/project1/projectimage1.png';
+import projectimage2 from '../../../public/project1/projectimage2.png';
+import projectimage3 from '../../../public/project1/projectimage3.jpeg';
+import projectimage4 from '../../../public/project1/projectimage4.png';
+import projectimage5 from '../../../public/project1/projectimage5.png';
+import projectimage6 from '../../../public/project1/projectimage6.jpeg';
+import ktmnowlogo from '../../../public/ktmnowlogo.png';
 const PortfolioSection: React.FC = () => {
   const slides = [
     {
