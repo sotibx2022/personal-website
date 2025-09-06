@@ -11,32 +11,17 @@
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-text) 100%);
   --gradient-bg: linear-gradient(135deg, var(--color-bg) 0%, #b5c7a8 100%);
 }
-body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: 'VT323', monospace;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 2rem;
-  overflow-x: hidden;
-  min-height: 100vh;
-  position: relative;
-}
-.section {
-  padding: 1rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
 .header {
-  display: flex;
+  display: inline-flex;
   justify-content: flex-end;
   padding: 1rem 2rem;
-  background-color: #ffffff;
+  background-color: var(--color-bg-light);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
+  margin-left: auto; /* This pushes the header to the right */
+  border-bottom-left-radius: 8px; /* Optional: adds a rounded corner */
 }
 .navbar {
   display: flex;
@@ -54,22 +39,12 @@ body {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: #333;
+  color: var(--color-text);
   font-weight: 500;
   font-size: 1.1rem;
   padding: 0.5rem 0;
   position: relative;
   transition: color 0.3s ease;
-}
-/* Home icon */
-.home-link::before {
-  content: "🏠";
-  font-size: 1.2rem;
-}
-/* Codes icon */
-.service-link::before {
-  content: "💻";
-  font-size: 1.2rem;
 }
 /* Underline animation */
 .navbar-link::after {
@@ -79,7 +54,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #007bff;
+  background: var(--gradient-primary);
   transition: width 0.3s ease;
 }
 .navbar-link:hover::after {
@@ -87,13 +62,30 @@ body {
 }
 /* Active state */
 .navbar-link.active {
-  color: #007bff;
+  color: var(--color-primary);
 }
 .navbar-link.active::after {
   width: 100%;
 }
 .navbar-link:hover {
-  color: #007bff;
+  color: var(--color-primary);
+}
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'VT323', monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 2rem;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+.section {
+  padding: 1rem 2rem;
+  position: relative;
+  overflow: hidden;
 }
 .hero-section {
   height: 100vh;

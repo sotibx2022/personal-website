@@ -6,7 +6,7 @@ import Header from "./componnets/Header";
 export default function Home() {
   return (
     <>
-    <Header/>
+      <Header />
       <HeroSection />
       <PortfolioSection />
       <ContactSection />
