@@ -18,7 +18,6 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import SplitText from './SplitText';
 interface Skill {
   name: string;
   icon: React.ReactNode;
@@ -45,19 +44,8 @@ const HeroSection: React.FC = () => {
     <section className="section hero-section">
       <div className="container hero-container">
         <div className="hero-content">
-          <SplitText
-            text="Welcome, Binayaraj SOTI Here !"
-            delay={100}
-            duration={0.6}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="center"
-            onLetterAnimationComplete={handleAnimationComplete}
-          />
+          <h2 className="portfolio-title">Welcome to my site,</h2>
+          <h3 className="portfolio-tech-title">Binayaraj <strong>SOTI</strong>, here</h3>
           <p className="hero-description">
             Crafting Full-Stack Web Applications with Next.js Expertise
           </p>
@@ -68,6 +56,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
       <div>
+        <h2 className="portfolio-title">Experties</h2>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}
