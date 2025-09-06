@@ -42,7 +42,8 @@ const HeroSection: React.FC = () => {
       <div className="container hero-container">
         <div className="hero-content">
           <h2 className="portfolio-title">Welcome to my site,</h2>
-          <h3 className="portfolio-tech-title">Binayaraj <strong>SOTI</strong>, here</h3>
+          <br></br>
+          <h3 className="portfolio-tech-title">Binayaraj <strong>SOTI</strong> here</h3>
           <p className="hero-description">
             Crafting Full-Stack Web Applications with Next.js Expertise
           </p>
