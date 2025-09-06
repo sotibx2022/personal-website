@@ -18,40 +18,57 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import SplitText from './SplitText';
 interface Skill {
   name: string;
   icon: React.ReactNode;
 }
 const skills: Skill[] = [
-    { name: "HTML",  icon: <SiHtml5 className="skill-icon html-icon" /> },
-    { name: "CSS",  icon: <SiCss3 className="skill-icon css-icon" /> },
-    { name: "JavaScript",  icon: <SiJavascript className="skill-icon js-icon" /> },
-    { name: "TypeScript",  icon: <SiTypescript className="skill-icon ts-icon" /> },
-    { name: "MongoDB",  icon: <SiMongodb className="skill-icon mongodb-icon" /> },
-    { name: "Next.js",  icon: <SiNextdotjs className="skill-icon nextjs-icon" /> },
-    { name: "TailwindCSS",  icon: <SiTailwindcss className="skill-icon tailwind-icon" /> },
-    { name: "Motion",  icon: <SiFramer className="skill-icon framer-icon" /> },
-    { name: "GitHub",  icon: <Github className="skill-icon github-icon" /> },
-    { name: "Node.js",  icon: <SiNodedotjs className="skill-icon nodejs-icon" /> },
-    { name: "Langchain",  icon: <Code2 className="skill-icon langchain-icon" /> },
-    { name: "Shadcn UI",  icon: <Braces className="skill-icon shadcn-icon" /> },
-  ];
+  { name: "HTML", icon: <SiHtml5 className="skill-icon html-icon" /> },
+  { name: "CSS", icon: <SiCss3 className="skill-icon css-icon" /> },
+  { name: "JavaScript", icon: <SiJavascript className="skill-icon js-icon" /> },
+  { name: "TypeScript", icon: <SiTypescript className="skill-icon ts-icon" /> },
+  { name: "MongoDB", icon: <SiMongodb className="skill-icon mongodb-icon" /> },
+  { name: "Next.js", icon: <SiNextdotjs className="skill-icon nextjs-icon" /> },
+  { name: "TailwindCSS", icon: <SiTailwindcss className="skill-icon tailwind-icon" /> },
+  { name: "Motion", icon: <SiFramer className="skill-icon framer-icon" /> },
+  { name: "GitHub", icon: <Github className="skill-icon github-icon" /> },
+  { name: "Node.js", icon: <SiNodedotjs className="skill-icon nodejs-icon" /> },
+  { name: "Langchain", icon: <Code2 className="skill-icon langchain-icon" /> },
+  { name: "Shadcn UI", icon: <Braces className="skill-icon shadcn-icon" /> },
+];
 const HeroSection: React.FC = () => {
+  const handleAnimationComplete = () => {
+    console.log('All letters have animated!');
+  };
   return (
     <section className="section hero-section">
       <div className="container hero-container">
         <div className="hero-content">
-          <h1 className="skill-level">Binayaraj SOTI Here</h1>
+          <SplitText
+            text="Welcome, Binayaraj SOTI Here !"
+            className="text-2xl font-semibold text-center"
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+            onLetterAnimationComplete={handleAnimationComplete}
+          />
           <p className="hero-description">
-           Crafting Full-Stack Web Applications with Next.js Expertise
+            Crafting Full-Stack Web Applications with Next.js Expertise
           </p>
         </div>
         <div className="socialIcons">
           <Link href="https://www.linkedin.com/in/binayaraj-soti-553132226/" className="social-link"><FaLinkedinIn /></Link>
-           <Link href="https://github.com/sotibx2022" className="social-link"><FaGithub/></Link>
+          <Link href="https://github.com/sotibx2022" className="social-link"><FaGithub /></Link>
         </div>
       </div>
-       <div>
+      <div>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}

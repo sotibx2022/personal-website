@@ -74,7 +74,8 @@ const PortfolioSection: React.FC = () => {
         <div className="portfolio-details">
           <h2 className="portfolio-title">Product Details</h2>
          <div className="projectSubtitle">
-           <h3 className="portfolio-subtitle">KTMnow.store</h3>
+          <Image alt="ktmnowlogo" width={50} height={50 }src='/ktmnowlogo.png' className="h-[50px] w-auto"/>
+           <h3>ktmnow.store</h3>
            <Link href='https://www.ktmnow.store/' className="btn" >View</Link>
          </div>
           <p className="portfolio-description">
