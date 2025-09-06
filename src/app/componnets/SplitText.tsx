@@ -21,7 +21,6 @@ export interface SplitTextProps {
 }
 const SplitText: React.FC<SplitTextProps> = ({
     text,
-    className = '',
     delay = 100,
     duration = 0.6,
     ease = 'power3.out',
@@ -148,7 +147,7 @@ const SplitText: React.FC<SplitTextProps> = ({
             wordWrap: 'break-word',
             willChange: 'transform, opacity'
         };
-        const classes = `split-parent ${className}`;
+        const classes = `split-parent`;
         switch (tag) {
             case 'h1':
                 return (
