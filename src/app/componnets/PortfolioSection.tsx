@@ -87,15 +87,12 @@ const PortfolioSection: React.FC = () => {
         </div>
         {/* Right Side - Swiper Slider */}
         <div className="portfolio-slider">
-            {slides.map((slide) => (
-                <div key={slide.id} className="slide-card">
-                  <div className="slide-content p-5 flex flex-col flex-grow justify-between">
-                    <h3 className="slide-title text-xl font-semibold text-[var(--color-text)] mb-3">
-                      {slide.title}
-                    </h3>
-                  </div>
-                </div>
-            ))}
+          <h4 className="portfolio-tech-title">Top Features:</h4>
+          {slides.map((slide, index) => (
+            <h3 className="slide-title" key={index}>
+              {slide.title}
+            </h3>
+          ))}
         </div>
       </div>
     </section>
