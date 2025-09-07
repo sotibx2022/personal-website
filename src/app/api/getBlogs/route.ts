@@ -15,10 +15,10 @@ export async function GET(req: NextRequest) {
             { message: 'Blogs fetched successfully', blogs },
             { status: 200 }
         );
-    } catch (error: any) {
-        console.error('Error fetching blogs:', error);
+    } catch (error) {
+        console.error('Error fetching blogs:');
         return NextResponse.json(
-            { message: 'Internal Server Error', error: error.message },
+            { message: 'Internal Server Error'},
             { status: 500 }
         );
     }

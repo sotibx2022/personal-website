@@ -1,4 +1,4 @@
-import mongoose, { Schema, model, models } from 'mongoose';
+import mongoose, { Schema} from 'mongoose';
 export interface IBlog {
     title: string;
     category: string;

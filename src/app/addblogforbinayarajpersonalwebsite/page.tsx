@@ -18,11 +18,9 @@ const Page = () => {
     const [description, setDescription] = useState('');
     const [code, setCode] = useState('');
     const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState('');
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        setMessage('');
         try {
             const response = await fetch('/api/addblogforbinayarajpersonalwebsite', {
                 method: 'POST',

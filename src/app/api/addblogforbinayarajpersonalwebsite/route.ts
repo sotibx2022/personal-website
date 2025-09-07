@@ -26,10 +26,10 @@ export async function POST(req: NextRequest) {
       { message: 'Blog created successfully', blog: newBlog },
       { status: 201 }
     );
-  } catch (error: any) {
-    console.error('Error creating blog:', error);
+  } catch (error) {
+    console.error('Error creating blog:');
     return NextResponse.json(
-      { message: 'Internal Server Error', error: error.message },
+      { message: 'Internal Server Error'},
       { status: 500 }
     );
   }
