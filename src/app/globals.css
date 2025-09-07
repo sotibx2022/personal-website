@@ -353,11 +353,11 @@ body {
   transform: translateY(-2px);
 }
 .portfolio-slider {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
 }
 .portfolio-slider:hover {
   transform: translateY(-5px);
@@ -821,5 +821,53 @@ p {
   .btn {
     padding: 10px 20px;
     font-size: var(--font-xs);
+  }
+}
+/* No Blogs Found Styling */
+.no-blogs-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+.no-blogs-found svg {
+  color: #ef4444;
+  stroke-width: 1.5;
+}
+.no-blogs-found p {
+  color: #ef4444;
+  font-size: var(--font-md);
+  font-weight: 500;
+  margin: 0;
+}
+/* Optional: Animation */
+.no-blogs-found {
+  animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .no-blogs-found {
+    padding: 30px 20px;
+  }
+  .no-blogs-found svg {
+    width: 28px;
+    height: 28px;
+  }
+  .no-blogs-found p {
+    font-size: var(--font-sm);
   }
 }

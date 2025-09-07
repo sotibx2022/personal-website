@@ -13,9 +13,6 @@ const Footer: React.FC = () => {
       <p className="footer-text">
         &copy; {currentYear} All rights reserved
       </p>
-      <button className="btn" onClick={scrollToTop}>
-        <ArrowUp />
-      </button>
     </footer>
   );
 };

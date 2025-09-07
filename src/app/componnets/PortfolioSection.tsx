@@ -1,10 +1,5 @@
 'use client';
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 // Import images from public/project1 folder
@@ -91,44 +86,16 @@ const PortfolioSection: React.FC = () => {
           </ul>
         </div>
         {/* Right Side - Swiper Slider */}
-        <div className="portfolio-slider relative">
-          <Swiper
-            spaceBetween={20}
-            pagination={{ clickable: true, el: '.swiper-pagination' }}
-            navigation={{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }}
-            modules={[Pagination, Navigation, Autoplay]}
-            loop={true}
-            className="h-full"
-          >
+        <div className="portfolio-slider">
             {slides.map((slide) => (
-              <SwiperSlide key={slide.id}>
-                <div className="slide-card bg-gradient-to-br from-[var(--color-bg)] to-[#c1d0b5] rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1 h-full flex flex-col">
-                  <div className="imageContainer w-full flex justify-center items-center">
-                    <Image
-                      src={slide.image}
-                      alt={slide.title}
-                      width={500}
-                      height={250}
-                      className="slide-image object-contain"
-                    />
-                  </div>
+                <div key={slide.id} className="slide-card">
                   <div className="slide-content p-5 flex flex-col flex-grow justify-between">
                     <h3 className="slide-title text-xl font-semibold text-[var(--color-text)] mb-3">
                       {slide.title}
                     </h3>
-                    <p className="slide-description text-[var(--color-text)] opacity-90 leading-relaxed">
-                      {slide.description}
-                    </p>
                   </div>
                 </div>
-              </SwiperSlide>
             ))}
-          </Swiper>
-          {/* Navigation arrows */}
-          <div className="swiper-button-next !text-[var(--color-primary)] after:!text-xl md:after:!text-2xl"></div>
-          <div className="swiper-button-prev !text-[var(--color-primary)] after:!text-xl md:after:!text-2xl"></div>
-          {/* Pagination */}
-          <div className="swiper-pagination !bottom-2"></div>
         </div>
       </div>
     </section>

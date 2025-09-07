@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
+import { AlertCircle } from 'lucide-react';
 const skills = [
     "CSS",
     "JavaScript",
@@ -64,7 +65,10 @@ const BlogList: React.FC = () => {
                         </div>
                     ))
                 ) : (
-                    <p>No blogs found for this category.</p>
+                    <div className="no-blogs-found">
+    <AlertCircle size={32} />
+    <p>No blogs found for this category.</p>
+  </div>
                 )}
             </div>
         </div>
