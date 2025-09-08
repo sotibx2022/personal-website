@@ -2,12 +2,12 @@ import Footer from "./componnets/Footer";
 import Header from "./componnets/Header";
 import "./globals.css";
 export const metadata = {
-  title: "Binayaraj Soti - Next.js E-commerce Developer from Nepal",
+  title: "Binayaraj Soti - Next.js Developer from Nepal",
   description: "I'm Binayaraj Soti, a Next.js e-commerce developer who transforms your ideas into fast, modern, and user-friendly websites from Nepal.",
   keywords: "Next.js developer, e-commerce developer, web developer Nepal, React developer",
   authors: [{ name: "Binayaraj Soti" }],
   openGraph: {
-    title: "Binayaraj Soti - Next.js E-commerce Developer",
+    title: "Binayaraj Soti - Next Js Developer",
     description: "Transforming ideas into fast, modern, and user-friendly websites from Nepal",
     type: "website",
   },
