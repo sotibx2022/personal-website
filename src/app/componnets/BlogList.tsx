@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
-import { AlertCircle } from 'lucide-react';
+import { AlertCircle, Calendar, Tag } from 'lucide-react';
 const skills = [
   "CSS",
   "JavaScript",
@@ -57,19 +57,19 @@ const BlogList: React.FC = () => {
           <p>Error: {(error as Error).message}</p>
         ) : blogs && blogs.length > 0 ? (
           blogs.map((blog) => (
-            <div key={blog._id} className="blog-card">
+            <Link href={`/singleBlog/blogDetails?blogId=${blog._id}`} key={blog._id} className="blog-card">
               <h3>{blog.title}</h3>
-              <p>
-                <strong>Category:</strong> {blog.category}
-              </p>
-              <p>
-                <strong>Created At:</strong>{" "}
-                {new Date(blog.createdAt).toLocaleDateString()}
-              </p>
-              <Link href={`/singleBlog/blogDetails?blogId=${blog._id}`}>
-                <button className="btn">Read More</button>
-              </Link>
-            </div>
+              <div className="blogInfo">
+                <div className="blogMeta">
+                  <Tag size={16} className="icon" />
+                  <p className='blogCategory'>{blog.category}</p>
+                </div>
+                <div className="blogMeta">
+                  <Calendar size={16} className="icon" />
+                  <p className='blogCreatedAt'>{new Date(blog.createdAt).toLocaleDateString()}</p>
+                </div>
+              </div>
+            </Link>
           ))
         ) : (
           <div className="no-blogs-found">
