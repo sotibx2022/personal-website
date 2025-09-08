@@ -1,6 +1,7 @@
 import Footer from "./componnets/Footer";
 import Header from "./componnets/Header";
 import "./globals.css";
+import LayoutProvider from "./LayoutProvider";
 export const metadata = {
   title: "Binayaraj Soti - Next.js Developer from Nepal",
   description: "I'm Binayaraj Soti, a Next.js e-commerce developer who transforms your ideas into fast, modern, and user-friendly websites from Nepal.",
@@ -24,9 +25,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="container">
-        <Header/>
-        {children}
-        <Footer/>
+        <Header />
+        <LayoutProvider>
+          {children}
+        </LayoutProvider>
+        <Footer />
       </body>
     </html>
   );

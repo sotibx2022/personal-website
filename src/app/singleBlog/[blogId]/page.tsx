@@ -1,20 +1,12 @@
 import React from 'react';
-import axios from "axios";
-import { IBlog } from '@/app/models/blog.model';
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
+import { getQueryClient } from '@/app/funcations/getQueryClient';
+import { getSingleProductData } from '@/app/funcations/fetchBlog';
+import SingleBlog from './SingleBlog';
 interface ISearchParams {
-    searchParams: Promise<{
-        blogId?: string;
-    }>
-}
-const getSingleProductData = async (blogId: string): Promise<IBlog | null> => {
-    try {
-        const fullUrl = `${process.env.NEXT_PUBLIC_API_URL!}/api/getSingleBlog/blogId=${blogId}`;
-        const response = await axios.get(fullUrl);
-        return response.data.singleBlog; // only the plain data
-    } catch (err: any) {
-        return null; // return null instead of the full error object
-    }
+    searchParams: Promise<{ blogId?: string }>;
 }
 export async function generateMetadata({ searchParams: mySearchParams }: ISearchParams): Promise<Metadata> {
     const searchParams = await mySearchParams;
@@ -23,37 +15,43 @@ export async function generateMetadata({ searchParams: mySearchParams }: ISearch
         return {
             title: 'No Blog Found',
             description: 'This is the single Blog Page of Binayaraj Soti Personal website however no Blog is found'
-        }
+        };
     }
-    const blogData = await getSingleProductData(blogId!);
+    const blogData = await getSingleProductData(blogId);
     if (!blogData) {
         return {
             title: 'No Blog Found',
             description: 'This is the single Blog Page of Binayaraj Soti Personal website however no Blog is found'
-        }
-    } else {
-        return {
+        };
+    }
+    return {
+        title: blogData.title,
+        description: blogData.description,
+        openGraph: {
             title: blogData.title,
             description: blogData.description,
-            openGraph: {
-                title: blogData.title,
-                description: blogData.description,
-                type: "website",
-                url: `${process.env.NEXT_PUBLIC_API_URL}/singleBlog/blogDetails?blogId=${blogId}`
-            }
+            type: 'website',
+            url: `${process.env.NEXT_PUBLIC_API_URL}/singleBlog/blogDetails?blogId=${blogId}`
         }
-    }
+    };
 }
-// set the metaData for page as per the blogTitle.
-// query client will be used to send data in singleBlogComponent.
-// data will be loaded in the server.
 const Page = async ({ searchParams: mySearchParams }: ISearchParams) => {
+    const queryClient = getQueryClient();
+    if (!queryClient) throw new Error('Query Client is not accessible');
     const searchParams = await mySearchParams;
     const blogId = searchParams.blogId;
+    if (blogId) {
+        // Prefetch the blog data on the server
+        await queryClient.prefetchQuery({
+            queryKey: ['singleBlog', blogId],
+            queryFn: () => getSingleProductData(blogId)
+        });
+    }
+    const dehydratedState = dehydrate(queryClient);
     return (
-        <div>
-            Blog ID: {blogId}
-        </div>
+        <HydrationBoundary state={dehydratedState}>
+            {blogId && <SingleBlog blogId={blogId} />}
+        </HydrationBoundary>
     );
 };
 export default Page;
