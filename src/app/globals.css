@@ -617,6 +617,9 @@ a{
   font-size: var(--font-sm);
   color: var(--color-text);
 }
+.userIcon{
+  cursor: pointer;
+}
 /* ============================= */
 /* Responsive Adjustments */
 /* ============================= */
@@ -853,4 +856,26 @@ p {
   .no-blogs-found p {
     font-size: var(--font-sm);
   }
+}
+.adminForm{
+  max-width: 300px;
+  padding: 2rem;
+}
+.page{
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p.warning-message {
+    background-color:var(--color-primary-light);
+    color: var(--color-bg); 
+    padding: 1rem; 
+    border:var(--color-primary);
+    border-radius: 0.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
 }

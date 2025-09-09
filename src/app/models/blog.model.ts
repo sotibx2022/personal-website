@@ -5,6 +5,7 @@ export interface IBlog {
     description?: string;
     codeSnippet?: string;
     createdAt?: Date;
+    _id?:string;
 }
 const blogSchema = new Schema<IBlog>(
     {

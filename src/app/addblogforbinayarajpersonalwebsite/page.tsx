@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import CodeSnippetEditor from '../componnets/CodeSnippetEditor';
+import Link from 'next/link';
 const skills = [
     "CSS",
     "JavaScript",
@@ -54,6 +55,7 @@ const Page = () => {
     return (
         <form onSubmit={handleSubmit} className="form-container section">
             <h1>Add Blog</h1>
+            <Link href='/listblogforbinayarajpersonalwebsite'>List Blogs</Link>
             <div className="form-group">
                 <label className="input-label">
                     <span className="label-text">Blog Title</span>
