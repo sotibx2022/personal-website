@@ -47,7 +47,7 @@ body {
   border-radius: 10px;
   z-index: 100;
 }
-a{
+a {
   text-decoration: none;
 }
 .navbar {
@@ -363,13 +363,14 @@ a{
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  flex: 1;
 }
 .singleSlideTitle {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
 .projectSubtitle {
   display: flex;
   justify-content: space-between;
@@ -618,7 +619,7 @@ a{
   font-size: var(--font-sm);
   color: var(--color-text);
 }
-.userIcon{
+.userIcon {
   cursor: pointer;
 }
 /* ============================= */
@@ -702,10 +703,10 @@ Blog list page
     gap: 0.4rem;
   }
 }
-.singleBlogPage{
+.singleBlogPage {
   display: flex;
   flex-direction: column;
-  gap:1;
+  gap: 1;
 }
 .blog-list-container {
   max-width: 1200px;
@@ -858,25 +859,25 @@ p {
     font-size: var(--font-sm);
   }
 }
-.adminForm{
+.adminForm {
   max-width: 300px;
   padding: 2rem;
 }
-.page{
+.page {
   min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 p.warning-message {
-    background-color:var(--color-primary-light);
-    color: var(--color-bg); 
-    padding: 1rem; 
-    border:var(--color-primary);
-    border-radius: 0.5rem;
-    font-weight: bold;
-    margin: 1rem 0;
-    display: flex;
-    align-items: center;
-    gap:0.5rem;
+  background-color: var(--color-primary-light);
+  color: var(--color-bg);
+  padding: 1rem;
+  border: var(--color-primary);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
