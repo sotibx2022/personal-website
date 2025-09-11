@@ -1,6 +1,15 @@
 import ktmnowlogo from '../public/ktmnowlogo.png';
-import flatcareLogo from '../public/flatcareLogo.webp'
-const projects = [
+import flatcareLogo from '../public/flatcareLogo.webp';
+export interface IProject {
+  projectLogo: string;
+  projectName: string;
+  projectLink: string;
+  projectDescription: string;
+  frontEndTechStacks: string[];
+  backendTechStacks: string[];
+  topFeatures: string[];
+}
+export const projects = [
   {
     projectLogo: ktmnowlogo, 
     projectName: "ktmnow.store",
