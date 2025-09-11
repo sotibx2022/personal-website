@@ -1,7 +1,8 @@
 import ktmnowlogo from '../public/ktmnowlogo.png';
 import flatcareLogo from '../public/flatcareLogo.webp';
+import { StaticImageData } from 'next/image';
 export interface IProject {
-  projectLogo: string;
+  projectLogo: StaticImageData;
   projectName: string;
   projectLink: string;
   projectDescription: string;
