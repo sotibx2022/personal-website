@@ -31,7 +31,6 @@ export const projects = [
     backendTechStacks: [
       "Next.js API",
       "MongoDB",
-      "Next.js over Node.js",
       "jsonwebtoken",
       "LangChain",
       "Mongoose",
@@ -51,7 +50,7 @@ export const projects = [
     projectName: "Faltcare Maintenance Planning",
     projectLink: "https://faltcare.vercel.app", 
     projectDescription:
-      "A software solution that enables customers, technicians, planners, and admins to collaborate seamlessly for maintenance management. Inspired by real-life challenges of managing over 500 shelters, this project simplifies task management, prioritization, and communication.",
+      "A software solution that enables customers, technicians, planners, and admins to collaborate seamlessly for maintenance management.",
     frontEndTechStacks: [
       "Next.js",
       "Recharts",
