@@ -30,8 +30,8 @@ const ContactForm = () => {
     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Service ID
     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Template ID
     {
-      from_name: data.fullName,
-      from_email: data.email,
+      fullName: data.fullName,
+      email: data.email,
       subject: data.subject,
       message: data.message,
       to_email: "sbinayarajsoti@gmail.com",
