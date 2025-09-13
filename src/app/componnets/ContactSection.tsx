@@ -1,22 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, User, MessageSquare, Hash } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import ContactForm from './ContactForm';
 const ContactSection: React.FC = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // You would typically send this data to your backend here
-  };
   return (
     <section className="section contact-section container" id="section-contact">
       <div className="container">
@@ -59,69 +45,7 @@ const ContactSection: React.FC = () => {
               </div>
             </div>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <div className="input-label">
-                <User size={20} className="label-icon" />
-                <span className="label-text">Your Name</span>
-              </div>
-              <input
-                type="text"
-                name="username"
-                required
-                placeholder="e.g. John Doe"
-                value={formData.username}
-                onChange={handleChange}
-                className="form-input"
-              />
-            </div>
-            <div className="form-group">
-              <div className="input-label">
-                <Mail size={20} className="label-icon" />
-                <span className="label-text">Your Email</span>
-              </div>
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="e.g. johndoe@example.com"
-                autoComplete="off"
-                value={formData.email}
-                onChange={handleChange}
-                className="form-input"
-              />
-            </div>
-            <div className="form-group">
-              <div className="input-label">
-                <Hash size={20} className="label-icon" />
-                <span className="label-text">Subject</span>
-              </div>
-              <input
-                type="text"
-                name="subject"
-                placeholder="e.g. Website Project Inquiry"
-                value={formData.subject}
-                onChange={handleChange}
-                className="form-input"
-              />
-            </div>
-            <div className="form-group">
-              <div className="input-label">
-                <MessageSquare size={20} className="label-icon" />
-                <span className="label-text">Your Message</span>
-              </div>
-              <textarea
-                name="message"
-                placeholder="e.g. I'd like to discuss a website project for my business..."
-                value={formData.message}
-                onChange={handleChange}
-                className="form-textarea"
-              ></textarea>
-            </div>
-            <div>
-              <input type="submit" value="Send Message" className="btn submit-btn" />
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </section>

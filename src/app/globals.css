@@ -577,6 +577,14 @@ a {
   font-family: 'VT323', monospace;
   color: rgba(19, 42, 1, 0.5);
 }
+.errorMessage {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--font-xs);
+  color: #dc2626;
+  font-weight: 500;
+  line-height: 1.4;
+}
 .btn {
   padding: 0.75rem 2rem;
   background: var(--gradient-primary);

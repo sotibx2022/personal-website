@@ -50,7 +50,7 @@ export const projects = [
     projectName: "Faltcare Maintenance Planning",
     projectLink: "https://faltcare.vercel.app", 
     projectDescription:
-      "A software solution that enables customers, technicians, planners, and admins to collaborate seamlessly for maintenance management.",
+      "A solution that enables customers, technicians, planners, and admins to collaborate seamlessly for maintenance management.",
     frontEndTechStacks: [
       "Next.js",
       "Recharts",
