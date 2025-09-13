@@ -4,6 +4,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import emailjs from "@emailjs/browser";
 import axios from "axios";
 const contactSchema = z.object({
     fullName: z.string().min(3, "Full Name must be at least three characters"),
@@ -24,8 +25,19 @@ const ContactForm = () => {
     });
     const contactFormMutation = useMutation({
         mutationFn: async (data: IContactFormData) => {
-            const response = await axios.post('/api/contactForm', data);
-            return response.data
+            emailjs
+  .send(
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, // Service ID
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, // Template ID
+    {
+      from_name: data.fullName,
+      from_email: data.email,
+      subject: data.subject,
+      message: data.message,
+      to_email: "sbinayarajsoti@gmail.com",
+    },
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! // Public Key
+  )
         }, onSuccess: () => {
             alert('Your Query Submitted.')
             reset()

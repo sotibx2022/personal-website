@@ -5,8 +5,8 @@ import QueryClientProvider from "./providers/QueryClientProvider";
 export default function Home() {
   return (
     <>
-        {/* <HeroSection />
-        <PortfolioSection /> */}
+        <HeroSection />
+        <PortfolioSection />
         <ContactSection />
     </>
   );

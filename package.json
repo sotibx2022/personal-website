@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.2.4",
+    "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.2.1",
     "@tanstack/react-query": "^5.87.1",
@@ -20,6 +21,7 @@
     "lucide-react": "^0.522.0",
     "mongoose": "^8.18.0",
     "next": "15.3.4",
+    "nodemailer": "^7.0.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.62.0",
