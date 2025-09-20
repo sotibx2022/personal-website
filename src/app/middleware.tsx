@@ -12,38 +12,27 @@ export function middleware(request: NextRequest) {
     '/addblogforbinayarajpersonalwebsite',
   ];
 
-  // Handle preflight OPTIONS requests
-  if (request.method === 'OPTIONS') {
-    const response = NextResponse.json({}, { status: 204 });
-    response.headers.set('Access-Control-Allow-Origin', 'https://www.binaya.site');
-    response.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
-    response.headers.set('Access-Control-Allow-Headers', 'Content-Type,Authorization');
-    return response;
-  }
-
   // Check if the current path is restricted
   if (restrictedRoutes.includes(url)) {
     const token = request.cookies.get('admin_token')?.value;
 
     if (!token) {
-      const response = NextResponse.redirect(new URL('/', request.url));
-      response.headers.set('Access-Control-Allow-Origin', 'https://www.binaya.site');
-      return response;
+      // Redirect to home if token is missing
+      return NextResponse.redirect(new URL('/', request.url));
     }
 
     try {
+      // Verify token
       jwt.verify(token, process.env.JWT_SECRET!);
-      const response = NextResponse.next();
-      response.headers.set('Access-Control-Allow-Origin', 'https://www.binaya.site');
-      return response;
+      // Token valid → continue to next middleware/route
     } catch {
-      const response = NextResponse.redirect(new URL('/', request.url));
-      response.headers.set('Access-Control-Allow-Origin', 'https://www.binaya.site');
-      return response;
+      // Redirect to home if token is invalid
+      return NextResponse.redirect(new URL('/', request.url));
     }
   }
 
-  // For all other routes, just continue the request and set CORS headers
+  // For all other routes (or if JWT is valid), continue the request
+  // and add general CORS headers
   const response = NextResponse.next();
   response.headers.set('Access-Control-Allow-Origin', 'https://www.binaya.site');
   response.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
@@ -56,6 +45,6 @@ export const config = {
   matcher: [
     '/listblogforbinayarajpersonalwebsite',
     '/addblogforbinayarajpersonalwebsite',
-    '/api/:path*', // include API routes for CORS
+    '/api/:path*', // include API routes
   ],
 };
