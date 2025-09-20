@@ -12,14 +12,21 @@ export function middleware(request: NextRequest) {
     '/addblogforbinayarajpersonalwebsite',
   ];
 
-  // handle CORS preflight requests
-  if (request.method === 'OPTIONS') {
+ if (request.method === 'OPTIONS') {
     const response = NextResponse.json({}, { status: 204 });
-    response.headers.set('Access-Control-Allow-Origin', 'https://www.binaya.site'); // allow your frontend
+    response.headers.set('Access-Control-Allow-Origin', 'https://www.binaya.site');
     response.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
     response.headers.set('Access-Control-Allow-Headers', 'Content-Type,Authorization');
     return response;
   }
+
+  // Handle other requests (GET, POST, etc.)
+  const response = NextResponse.next();
+  response.headers.set('Access-Control-Allow-Origin', 'https://www.binaya.site');
+  response.headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+  return response;
+}
 
   // check if current path is restricted
   if (restrictedRoutes.includes(url)) {
