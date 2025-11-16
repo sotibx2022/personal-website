@@ -4,10 +4,10 @@ import { NextResponse, type NextRequest } from 'next/server';
 type Params = { jobtitle: string };
 export async function GET(
   req: NextRequest,
-  context: { params: Params } // ✅ Use Next.js expected type
 ) {
-  const { jobtitle } = context.params;
-  // Ensure the database is connected
+  const url = new URL(req.url);
+    const pathSegments = url.pathname.split("/");
+    const jobtitle = pathSegments.pop();
   await connectToDb();
   try {
     // Find the roadmap by job title
