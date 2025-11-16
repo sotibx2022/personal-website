@@ -1,11 +1,12 @@
 import connectToDb from '@/app/configuration/connectToDb';
 import { RoadMapModel } from '@/app/models/roadmap.model';
 import { NextResponse, type NextRequest } from 'next/server';
-interface Props {
-  params: { jobtitle: string };
-}
-export async function GET(req: NextRequest, props: Props) {
-  const { jobtitle } = props.params;
+type Params = { jobtitle: string };
+export async function GET(
+  req: NextRequest,
+  context: { params: Params } // ✅ Use Next.js expected type
+) {
+  const { jobtitle } = context.params;
   // Ensure the database is connected
   await connectToDb();
   try {
